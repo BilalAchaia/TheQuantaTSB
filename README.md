@@ -1,81 +1,79 @@
 # TheQuantaTSB
-Quantitative Trading Strategy and Machine Learning Backtesting Framework
+
+> **Automated Quantitative Trading Strategy & Machine Learning Backtesting Framework**
+
+---
 
 ## Overview
-TheQuantaTSB is a Python-based quantitative research and backtesting framework designed for modeling, evaluating, and simulating algorithmic trading strategies on financial time-series data. 
+**TheQuantaTSB** is a Python-based quantitative research engine designed to build, test, and simulate algorithmic trading strategies on financial time-series data without lookahead bias.
 
-The architecture separates data preprocessing, predictive modeling, strategy formulation, and backtest execution into isolated modules, enabling systematic evaluation of trading hypotheses while minimizing lookahead and survivorship biases.
+---
 
-## System Architecture
+## System Workflow
 
-The pipeline operates sequentially across four primary stages:
+```
+[ Market Data ] ──> [ Feature Engineering ] ──> [ ML / Strategy Logic ] ──> [ Backtester & Risk ] ──> [ Performance Metrics ]
+```
 
-1. Data Ingestion and Preprocessing:
-   Loads historical market data, handles missing records, and computes domain-specific technical indicators and statistical features.
+---
 
-2. Statistical and Machine Learning Models (`models/`):
-   Trains and evaluates predictive algorithms on processed historical features to generate market regime or price direction signals.
+## Project Structure
 
-3. Strategy and Execution Logic (`strategies/`):
-   Applies deterministic risk rules, entry/exit criteria, and position sizing based on model inference and technical thresholds.
-
-4. Backtesting and Metric Logging (`src/`, `training_results_auto_v7/`):
-   Simulates order execution and outputs quantitative performance indicators, including cumulative returns, maximum drawdown, and volatility metrics.
-
-## Repository Structure
-
+```text
 TheQuantaTSB/
-├── assets/                  # Architecture diagrams and performance charts
-├── config/                  # Configuration parameters and hyperparameters
-├── data/                    # Historical and processed datasets
-├── docs/                    # Technical documentation
-├── models/                  # ML models, training scripts, and serialized weights
-├── scripts/                 # Automation and utility scripts
-├── src/                     # Core backtesting engine, data loaders, and metrics
-├── strategies/              # Quantitative trading strategy implementations
-├── tests/                   # Unit and integration tests
-├── training_results_auto_v7/# Backtest logs, performance reports, and outputs
-├── requirements.txt         # Project dependencies
+├── assets/                  # Performance plots and metrics
+├── config/                  # Hyperparameters and strategy settings
+├── data/                    # Historical market datasets
+├── docs/                    # Architecture notes
+├── models/                  # ML models and weights
+├── scripts/                 # Utility automation scripts
+├── src/                     # Core backtest and execution engine
+├── strategies/              # Algorithmic trading strategies
+├── tests/                   # Automated unit tests
+├── training_results_auto_v7/# Benchmark logs and outputs
+├── requirements.txt         # Dependencies
 └── run.py                   # Main pipeline entry point
-Core Modules
-1. Data Processing (src/data/)
-Handles data cleaning, normalization, and feature generation (e.g., moving averages, volatility indicators, and momentum oscillators) stored under data/.
-2. Strategy Engine (strategies/)
-Contains modular classes defining trading rules. Each strategy implements standardized interfaces for receiving market updates and emitting trade signals.
-3. Model Training (models/)
-Integrates time-series forecasting and classification models. Hyperparameters and runtime configurations are decoupled into config/ files.
-4. Backtest Evaluation (training_results_auto_v7/)
-Contains the output of historical simulation runs, including trade logs, equity curves, and performance summaries across test horizons.
-Getting Started
-Requirements
-Python 3.9+
-Linux, macOS, or Windows
-Installation
-Clone the repository:
-code
-Bash
+```
+
+---
+
+## Core Capabilities
+
+- **Time-Series Modeling:** Automated preprocessing and feature extraction on raw financial data.
+- **Pluggable Strategies:** Modular architecture to define custom technical indicators or ML-driven signals.
+- **Risk & Execution Simulator:** Simulates trade fills, position sizing, and maximum drawdown constraints.
+- **Experiment Logs:** Historical evaluation and metrics saved automatically in `training_results_auto_v7/`.
+
+---
+
+## Quickstart
+
+### 1. Setup Environment
+```bash
 git clone https://github.com/BilalAchaia/TheQuantaTSB.git
 cd TheQuantaTSB
-Create and activate a virtual environment:
-code
-Bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install dependencies:
-code
-Bash
 pip install -r requirements.txt
-Execution
-To run the primary backtest and modeling pipeline:
-code
-Bash
+```
+
+### 2. Run Pipeline
+```bash
 python run.py
-To run the test suite:
-code
-Bash
+```
+
+### 3. Run Tests
+```bash
 pytest tests/
-Research Disclaimer
-This software is developed strictly for academic, educational, and research purposes. It does not constitute financial, investment, or trading advice.
-Author
-Bilal Achaia
-GitHub: @BilalAchaia
+```
+
+---
+
+## Disclaimer
+This project is strictly for **academic and research purposes**. It is not financial or investment advice.
+
+---
+
+## Author
+- **Bilal Achaia** — [@BilalAchaia](https://github.com/BilalAchaia)
+```
