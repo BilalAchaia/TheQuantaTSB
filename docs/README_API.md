@@ -1,4 +1,4 @@
-# ANOXILAL News API
+# TheQuantaTSB News API
 
 This API provides endpoints to fetch financial market news and perform sentiment analysis on news related to specific trading pairs.
 
