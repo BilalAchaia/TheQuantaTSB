@@ -62,11 +62,6 @@ pip install -r requirements.txt
 python run.py
 ```
 
-### 3. Run Tests
-```bash
-pytest tests/
-```
-
 ---
 
 ## Disclaimer
